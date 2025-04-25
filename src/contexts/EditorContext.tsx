@@ -157,7 +157,7 @@ export const EditorProvider = ({ children }: { children: React.ReactNode }) => {
       console.log('Saving progress...', content);
       // In the real implementation, this would save to Supabase
       localStorage.setItem('copy_tuner_draft', content);
-      return true;
+      return;
     } catch (error) {
       console.error('Save error:', error);
       toast({
@@ -165,7 +165,7 @@ export const EditorProvider = ({ children }: { children: React.ReactNode }) => {
         description: "Failed to save your progress.",
         variant: "destructive"
       });
-      return false;
+      return;
     }
   };
 

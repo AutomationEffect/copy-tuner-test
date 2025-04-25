@@ -1,6 +1,6 @@
 
 import React, { useState, useCallback, useEffect } from 'react';
-import { useEditor, EditorContent } from '@tiptap/react';
+import { useEditor, EditorContent, Editor } from '@tiptap/react';
 import StarterKit from '@tiptap/starter-kit';
 import Heading from '@tiptap/extension-heading';
 import { Button } from '@/components/ui/button';
@@ -9,9 +9,6 @@ import {
   Italic, 
   List, 
   ListOrdered, 
-  AlignLeft, 
-  AlignCenter, 
-  AlignRight,
   Heading1,
   Heading2,
   Heading3,
@@ -74,7 +71,7 @@ const TipTapEditor = ({
   const toggleItalic = () => editor.chain().focus().toggleItalic().run();
   const toggleBulletList = () => editor.chain().focus().toggleBulletList().run();
   const toggleOrderedList = () => editor.chain().focus().toggleOrderedList().run();
-  const setHeading = (level: number) => editor.chain().focus().toggleHeading({ level }).run();
+  const setHeading = (level: 1 | 2 | 3) => editor.chain().focus().toggleHeading({ level }).run();
 
   return (
     <div className={`border rounded-lg ${isFocused ? 'ring-2 ring-primary/20' : ''} ${className}`}>
@@ -83,8 +80,8 @@ const TipTapEditor = ({
           <Button
             variant="ghost"
             size="icon"
-            onClick={() => editor.chain().focus().undo().run()}
-            disabled={!editor.can().undo()}
+            onClick={() => editor.commands.undo()}
+            disabled={!editor.can().chain().focus().undo().run()}
             className="h-8 w-8"
           >
             <Undo className="h-4 w-4" />
@@ -92,8 +89,8 @@ const TipTapEditor = ({
           <Button
             variant="ghost"
             size="icon"
-            onClick={() => editor.chain().focus().redo().run()}
-            disabled={!editor.can().redo()}
+            onClick={() => editor.commands.redo()}
+            disabled={!editor.can().chain().focus().redo().run()}
             className="h-8 w-8"
           >
             <Redo className="h-4 w-4" />

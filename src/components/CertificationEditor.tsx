@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { useEditor } from '@/contexts/EditorContext';
 import { useCertification } from '@/contexts/CertificationContext';
@@ -9,7 +8,6 @@ import {
   Card,
   CardContent,
   CardDescription,
-  CardFooter,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
@@ -176,7 +174,7 @@ const CertificationEditor = () => {
                           >
                             <div className="flex items-start justify-between">
                               <span className="font-medium text-sm">{edict.name}</span>
-                              <Badge variant={result.passed ? "success" : "outline"} className="ml-2">
+                              <Badge variant={result.passed ? "default" : "outline"} className="ml-2">
                                 {result.score}%
                               </Badge>
                             </div>
