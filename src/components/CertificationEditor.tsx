@@ -1,5 +1,4 @@
-
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useEditor } from '@/contexts/EditorContext';
 import { useCertification } from '@/contexts/CertificationContext';
 import { edictsSystem } from '@/data/structuredEdictsPillars';
@@ -9,7 +8,6 @@ import {
   Card,
   CardContent,
   CardDescription,
-  CardFooter,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
