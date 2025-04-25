@@ -16,6 +16,7 @@ import { ScoreCard } from '@/components/certification/ScoreCard';
 import { AIFeedbackCard } from '@/components/certification/AIFeedbackCard';
 import { CertificationControls } from '@/components/certification/CertificationControls';
 import { ReferenceGuide } from '@/components/certification/ReferenceGuide';
+import { EdictResultsList } from '@/components/certification/EdictResultsList';  // Add this import
 import TipTapEditor from './TipTapEditor';
 import ConfettiExplosion from 'react-confetti-explosion';
 
