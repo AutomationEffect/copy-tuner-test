@@ -1,73 +1,111 @@
-# Welcome to your Lovable project
 
-## Project info
+# Copy Tuner Application
 
-**URL**: https://lovable.dev/projects/571db48d-bb49-4dad-9c81-127a2255555a
+A web application for copywriters to learn and apply Jon Benson's Conversion Optimization System (COS).
 
-## How can I edit this code?
+## Features
 
-There are several ways of editing your application.
+- **Authentication System**
+  - Email-based login with protected routes
+  - Session management
+  - Role-based access control
 
-**Use Lovable**
+- **Certification Process**
+  - Interactive rich text editor
+  - Real-time copy analysis
+  - Client-side validation
+  - AI-powered review system
+  - Pro Mode unlocking system
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/571db48d-bb49-4dad-9c81-127a2255555a) and start prompting.
+- **Editor Features**
+  - Rich text formatting
+  - Real-time feedback
+  - Auto-saving
+  - Copy score tracking
+  - Edict compliance checking
 
-Changes made via Lovable will be committed automatically to this repo.
+## Tech Stack
 
-**Use your preferred IDE**
+- **Frontend**
+  - React 18 with TypeScript
+  - Vite build system
+  - TipTap v2 rich text editor
+  - Tailwind CSS for styling
+  - Shadcn UI components
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+- **State Management**
+  - React Context for app state
+  - TanStack Query for data fetching
+  - Custom hooks for business logic
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+## Project Structure
 
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+```
+src/
+├── components/
+│   ├── certification/     # Certification-specific components
+│   ├── editor/           # Rich text editor components
+│   ├── ui/               # Shadcn UI components
+│   └── NavBar.tsx
+├── contexts/
+│   ├── AuthContext.tsx   # Authentication state
+│   ├── EditorContext.tsx # Editor state management
+│   └── CertificationContext.tsx
+├── hooks/
+│   └── use-toast.ts      # Toast notifications
+├── pages/
+│   ├── AuthPage.tsx
+│   ├── CertificationPage.tsx
+│   ├── DashboardPage.tsx
+│   ├── GlossaryPage.tsx
+│   ├── LandingPage.tsx
+│   ├── NotFound.tsx
+│   └── ProPage.tsx
+├── utils/
+│   ├── errorLogger.ts    # Error tracking
+│   └── clientSideValidators.ts
+└── App.tsx
 ```
 
-**Edit a file directly in GitHub**
+## Core Workflows
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+1. **Certification Process**
+   - User logs in
+   - Accesses certification editor
+   - Edits sample copy
+   - Receives real-time feedback
+   - Submits for AI review
+   - Unlocks Pro Mode upon passing
 
-**Use GitHub Codespaces**
+2. **Pro Mode**
+   - Available after certification
+   - Unrestricted copy analysis
+   - Advanced features access
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## Getting Started
 
-## What technologies are used for this project?
+1. Clone the repository
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Start development server:
+   ```bash
+   npm run dev
+   ```
 
-This project is built with:
+## Contributing
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Submit a pull request
 
-## How can I deploy this project?
+## Error Handling
 
-Simply open [Lovable](https://lovable.dev/projects/571db48d-bb49-4dad-9c81-127a2255555a) and click on Share -> Publish.
+The application uses a centralized error logging system:
+- Client-side error tracking
+- Toast notifications for user feedback
+- Detailed error context logging
+- Error boundary protection
 
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
