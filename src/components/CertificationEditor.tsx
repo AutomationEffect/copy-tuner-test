@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from 'react';
 import { useEditor } from '@/contexts/EditorContext';
 import { useCertification } from '@/contexts/CertificationContext';
@@ -8,6 +9,7 @@ import {
   Card,
   CardContent,
   CardDescription,
+  CardFooter,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
